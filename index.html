@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACC INVESTMENT</title>
+  <style>
+    body {
+      background-color: #000814;
+      color: #d4af37;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #00ff88;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 32px;
+      color: #d4af37;
+      margin: 10px 0;
+    }
+    .profit {
+      font-size: 28px;
+      color: #00ff88;
+      margin-bottom: 40px;
+    }
+    .fee-note {
+      font-size: 20px;
+      color: #ffcc00;
+      margin: 20px 0;
+    }
+    button {
+      background-color: #00ff88;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #d4af37;
+      color: #000;
+    }
+  </style>
+  <script>
+    // Simple Belgium-oriented language adaptation
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://ipapi.co/json/")
+        .then(response => response.json())
+        .then(data => {
+          if (data.country_code === "BE") {
+            // Belgian Dutch (Flemish) version example - you can adjust or add French (Wallonia)
+            document.querySelector("h1").innerText = "ACC INVESTERING";
+            document.querySelector("h2").innerText = "Andrea Van Den Langenbergh";
+            document.querySelector(".profit").innerText = "Winst: 38.000 €";
+            document.querySelector(".fee-note").innerText = "Opnamekost: 400 €";
+            document.querySelector("button").innerText = "Ga naar opname (BNP Paribas Fortis)";
+          }
+        })
+        .catch(() => {});
+    });
+  </script>
+</head>
+<body>
+  <h1>ACC INVESTMENT</h1>
+  <h2>Andrea Van Den Langenbergh</h2>
+  <div class="profit">Profit: 38.000 €</div>
+  <div class="fee-note">Withdrawal Fee: 400 €</div>
+  <button onclick="window.location.href='withdrawal.html'">Go to Withdrawal (BNP Paribas Fortis)</button>
+</body>
+</html>
